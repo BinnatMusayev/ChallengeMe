@@ -1,0 +1,219 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#fcf2ea"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="79dp"
+            android:layout_height="406dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/followerCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="10000"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Followers"
+                android:textAlignment="center"
+                android:textColor="#000000"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="179dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="140dp"
+                android:layout_height="139dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:contentDescription="profile pic"
+                android:src="@drawable/cowboy_pic"
+                android:layout_margin="@dimen/activity_horizontal_margin"/>
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="binnet94"
+                android:textColor="#000000"
+                android:paddingBottom="5dp"
+                android:textAlignment="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="79dp"
+            android:layout_height="406dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/followingCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="300"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textColor="#000000"
+                />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Following"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fad1b2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/challangeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="10dp"
+            android:text="173"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="10dp"
+            android:text="Challenges"
+            android:textColor="#000000" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="9dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_add_circle_outline_black_24dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="#fcf2ea"
+            >
+
+            <LinearLayout
+                android:id="@+id/listViewButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:onClick="changeViewToList"
+                android:background="#fffae4d3" >
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:src="@drawable/ic_view_headline_black_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gridViewButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:onClick="changeViewToGrid">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_grid_on_black_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/statsViewButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:onClick="changeViewToStats">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_format_list_numbered_black_24dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--<fragment-->
+            <!--android:id="@+id/profileContentFragment"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent" />-->
+
+        <FrameLayout
+            android:id="@+id/profileContentFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
