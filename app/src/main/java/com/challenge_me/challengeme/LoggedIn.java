@@ -1,5 +1,8 @@
 package com.challenge_me.challengeme;
 
+import android.app.ActionBar;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 
@@ -51,6 +54,15 @@ public class LoggedIn extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logged_in);
+
+		//change title of Action Bar and set color
+//		getSupportActionBar().setTitle("ChallengeMe");
+//        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FAD1B2")));
+        //layout of actionbar
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.action_bar_layout);
+        TextView textViewTitle = (TextView) findViewById(R.id.title);
+        textViewTitle.setText(R.string.title);
 
 		mTextMessage = (TextView) findViewById(R.id.message);
 		BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);

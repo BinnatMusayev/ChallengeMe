@@ -20,7 +20,7 @@ public class SignIn extends AppCompatActivity {
 		dontHaveAccountText = (TextView) findViewById(R.id.dontHaveAccountText);
 		dontHaveAccountText.setText("Don't have an account yet?");
 
-
+		getSupportActionBar().hide();
 
 	}
 

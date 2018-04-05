@@ -15,6 +15,10 @@ public class SignUp extends AppCompatActivity {
 
 		haveAnAccountText = (TextView) findViewById(R.id.haveAnAccountText);
 		haveAnAccountText.setText("Already have an account?");
+
+
+		getSupportActionBar().hide();
+
 	}
 
 	public void goToSignIn(View view){
