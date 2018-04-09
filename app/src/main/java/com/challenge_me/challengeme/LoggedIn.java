@@ -86,9 +86,9 @@ public class LoggedIn extends AppCompatActivity {
 		profileFragment.changeViewToList();
 	}
 
-	public  void changeViewToGrid(View view){
-		profileFragment.changeViewToGrid();
-	}
+//	public  void changeViewToGrid(View view){
+//		profileFragment.changeViewToGrid();
+//	}
 
 	public  void changeViewToStats(View view){
 		profileFragment.changeViewToStats();

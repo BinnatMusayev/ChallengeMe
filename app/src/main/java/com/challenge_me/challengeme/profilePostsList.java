@@ -27,7 +27,7 @@ public class profilePostsList extends Fragment {
 	private RecyclerView recyclerView;
 	private RecyclerView.Adapter adapter;
 	private List<Challenge> challenges;
-	LinearLayoutManager mLayoutManager;
+	private LinearLayoutManager mLayoutManager;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -1,9 +1,12 @@
 package com.challenge_me.challengeme.model;
 
-public class User {
+import android.support.annotation.NonNull;
+
+public class User implements Comparable<User> {
 
 	private int user_id;
 	private String username,password, firstname, surname, profile_photo, desc;
+	private int ranking;
 
 	public User(int user_id) {
 		this.user_id = user_id;
@@ -11,7 +14,7 @@ public class User {
 	}
 
 	//just in case
-	public User(int user_id, String username, String password, String firstname, String surname, String profile_photo, String desc) {
+	public User(int user_id, String username, String password, String firstname, String surname, String profile_photo, String desc, int ranking) {
 		this.user_id = user_id;
 		this.username = username;
 		this.password = password;
@@ -19,6 +22,7 @@ public class User {
 		this.surname = surname;
 		this.profile_photo = profile_photo;
 		this.desc = desc;
+		this.ranking = ranking;
 	}
 
 	public int getUser_id() {
@@ -75,5 +79,20 @@ public class User {
 
 	public void setDesc(String desc) {
 		this.desc = desc;
+	}
+
+	public int getRanking() {
+		return ranking;
+	}
+
+	public void setRanking(int ranking) {
+		this.ranking = ranking;
+	}
+
+	@Override
+	public int compareTo(@NonNull User o) {
+		if (this.getRanking() < o.getRanking())
+			return 1;
+		else return -1;
 	}
 }

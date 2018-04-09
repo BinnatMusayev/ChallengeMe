@@ -168,22 +168,22 @@
                     android:src="@drawable/ic_view_headline_black_24dp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/gridViewButton"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:onClick="changeViewToGrid">
+            <!--<LinearLayout-->
+                <!--android:id="@+id/gridViewButton"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:clickable="true"-->
+                <!--android:onClick="changeViewToGrid">-->
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_grid_on_black_24dp" />
-            </LinearLayout>
+                <!--<ImageView-->
+                    <!--android:id="@+id/imageView5"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:src="@drawable/ic_grid_on_black_24dp" />-->
+            <!--</LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/statsViewButton"

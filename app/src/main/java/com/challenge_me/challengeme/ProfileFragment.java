@@ -19,11 +19,6 @@ public class ProfileFragment extends Fragment {
 	private Fragment childFragment;
 	private FragmentTransaction transaction;
 
-	//recycler example
-	private RecyclerView recyclerView;
-	private RecyclerView.Adapter adapter;
-	private List<ProfileChallenge> profileChallenges;
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
@@ -56,32 +51,34 @@ public class ProfileFragment extends Fragment {
 
 
 		//changing color of buttons
-		getActivity().findViewById(R.id.gridViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
+//		getActivity().findViewById(R.id.gridViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
 		getActivity().findViewById(R.id.statsViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
 		getActivity().findViewById(R.id.listViewButton).setBackgroundColor(Color.parseColor("#fffae4d3"));
 	}
 
-	public  void changeViewToGrid(){
-		childFragment = new profilePostsGrid();
-		transaction = getChildFragmentManager().beginTransaction();
-		transaction.replace(R.id.profileContentFragment, childFragment);
-		transaction.commit();
-
-		//changing color of buttons
-		getActivity().findViewById(R.id.listViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
-		getActivity().findViewById(R.id.statsViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
-		getActivity().findViewById(R.id.gridViewButton).setBackgroundColor(Color.parseColor("#fffae4d3"));
-
-	}
+//	public  void changeViewToGrid(){
+//		childFragment = new profilePostsGrid();
+//		transaction = getChildFragmentManager().beginTransaction();
+//		transaction.replace(R.id.profileContentFragment, childFragment);
+//		transaction.commit();
+//
+//		//changing color of buttons
+//		getActivity().findViewById(R.id.listViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
+//		getActivity().findViewById(R.id.statsViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
+//		getActivity().findViewById(R.id.gridViewButton).setBackgroundColor(Color.parseColor("#fffae4d3"));
+//
+//	}
 
 	public  void changeViewToStats(){
-		childFragment = new profileStatistics();
-		transaction = getChildFragmentManager().beginTransaction();
-		transaction.replace(R.id.profileContentFragment, childFragment);
-		transaction.commit();
+		if(!this.getChildFragmentManager().getFragments().get(0).equals(profileStatistics.class)){
+			childFragment = new profileStatistics();
+			transaction = getChildFragmentManager().beginTransaction();
+			transaction.replace(R.id.profileContentFragment, childFragment);
+			transaction.commit();
+		}
 
 		//changing color of buttons
-		getActivity().findViewById(R.id.gridViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
+//		getActivity().findViewById(R.id.gridViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
 		getActivity().findViewById(R.id.listViewButton).setBackgroundColor(Color.parseColor("#fcf2ea"));
 		getActivity().findViewById(R.id.statsViewButton).setBackgroundColor(Color.parseColor("#fffae4d3"));
 	}
