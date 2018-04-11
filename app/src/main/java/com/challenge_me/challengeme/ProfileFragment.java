@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment {
 
-	private Fragment childFragment;
+	private Fragment childFragment, currentFragment;
 	private FragmentTransaction transaction;
 
 	@Override
@@ -44,10 +44,13 @@ public class ProfileFragment extends Fragment {
 
 
 	public  void changeViewToList(){
-		childFragment = new profilePostsList();
-		transaction = getChildFragmentManager().beginTransaction();
-		transaction.replace(R.id.profileContentFragment, childFragment);
-		transaction.commit();
+		currentFragment = getChildFragmentManager().findFragmentById(R.id.profileContentFragment);
+		if(!profilePostsList.class.toString().equals(currentFragment.getClass().toString())) {
+			childFragment = new profilePostsList();
+			transaction = getChildFragmentManager().beginTransaction();
+			transaction.replace(R.id.profileContentFragment, childFragment);
+			transaction.commit();
+		}
 
 
 		//changing color of buttons
@@ -70,7 +73,8 @@ public class ProfileFragment extends Fragment {
 //	}
 
 	public  void changeViewToStats(){
-		if(!this.getChildFragmentManager().getFragments().get(0).equals(profileStatistics.class)){
+		currentFragment = getChildFragmentManager().findFragmentById(R.id.profileContentFragment);
+		if(!profileStatistics.class.toString().equals(currentFragment.getClass().toString())){
 			childFragment = new profileStatistics();
 			transaction = getChildFragmentManager().beginTransaction();
 			transaction.replace(R.id.profileContentFragment, childFragment);
