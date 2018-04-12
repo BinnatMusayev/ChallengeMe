@@ -22,6 +22,11 @@ public class LoggedIn extends AppCompatActivity {
 
 	private TextView mTextMessage;
 	private ProfileFragment profileFragment;
+	private NotificationFragment notificationFragment;
+	private SearchFragment searchFragment;
+	//fragement
+	private FragmentManager fragmentManager;
+	private FragmentTransaction fragmentTransaction;
 
 	private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
 			= new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -30,16 +35,19 @@ public class LoggedIn extends AppCompatActivity {
 		public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 			switch (item.getItemId()) {
 				case R.id.navigation_profile:
+					changeMainFragment(profileFragment);
 					mTextMessage.setText(R.string.title_profile);
 					return true;
 				case R.id.navigation_dashboard:
 					mTextMessage.setText(R.string.title_dashboard);
 					return true;
 				case R.id.navigation_notifications:
+					changeMainFragment(notificationFragment);
 					mTextMessage.setText(R.string.title_notifications);
 					return true;
 				case R.id.navigation_search:
 					mTextMessage.setText(R.string.title_search);
+					changeMainFragment(searchFragment);
 					return true;
 				case R.id.navigation_settings:
 					mTextMessage.setText(R.string.title_settings);
@@ -70,15 +78,28 @@ public class LoggedIn extends AppCompatActivity {
 		// disable shifting animation
 		BottomNavigationViewHelper.disableShiftMode(navigation);
 
-		FragmentManager fragmentManager = getSupportFragmentManager();
-		FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
+		//initialize fragements
 		profileFragment = new ProfileFragment();
-		fragmentTransaction.replace(R.id.mainFragment, profileFragment);
+		notificationFragment = new NotificationFragment();
+		searchFragment = new SearchFragment();
+
+		fragmentManager = getSupportFragmentManager();
+		changeMainFragment(profileFragment);
+//		fragmentTransaction = fragmentManager.beginTransaction();
+//
+//		fragmentTransaction.replace(R.id.mainFragment, profileFragment);
+//
+//		fragmentTransaction.commit();
+
+
+	}
+
+	public void changeMainFragment(Fragment fragment){
+		fragmentTransaction = fragmentManager.beginTransaction();
+
+		fragmentTransaction.replace(R.id.mainFragment, fragment);
 
 		fragmentTransaction.commit();
-
-
 	}
 
 
