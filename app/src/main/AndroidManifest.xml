@@ -21,7 +21,21 @@
         <activity
             android:name=".LoggedIn"
             android:label="@string/title_activity_logged_in"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Following"
+            android:parentActivityName="com.challenge_me.challengeme.LoggedIn" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.challenge_me.challengeme.LoggedIn" />
+        </activity>
+        <activity
+            android:name=".Followers"
+            android:parentActivityName="com.challenge_me.challengeme.LoggedIn" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.challenge_me.challengeme.LoggedIn" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.challenge_me.challengeme.model;
 
 import java.util.Date;
+import java.util.Random;
 
 public class Challenge {
 
@@ -9,10 +10,26 @@ public class Challenge {
 	private String creator_photo, challenger_photo;
 	private User creator, challenger;
 
+	//delete later type
+	private int type;
+	private Random rand;
+
+
 	public Challenge(int challenge_id) {
 		this.challenge_id = challenge_id;
 		//butun data webserverden gelecek
+
+
+		//delete later
+		rand = new Random();
+		type = rand.nextInt(3)+1;
 	}
+
+	//DELETE LATER
+	public int getType(){
+		return this.type;
+	}
+
 
 	//just in case
 	public Challenge(int challenge_id, int creator_id, int challenger_id, Date start_time, Date end_time,

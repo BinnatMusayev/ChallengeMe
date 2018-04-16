@@ -13,4 +13,8 @@
 
     <string name="title">ChallengeMe</string>
 
+    <string name="signOutBtn">Sign Out</string>
+    <string name="semicolon">:</string>
+    <string name="dashboard">Dashboard</string>
+
 </resources>
