@@ -139,4 +139,20 @@ public class LoggedIn extends AppCompatActivity {
 		startActivity(new Intent(LoggedIn.this, Followers.class));
 	}
 
+	//create new challenge
+	public void createNewChallenge(View view){
+		startActivity(new Intent(LoggedIn.this, CreateChallenge.class).putExtra("sessionId", getIntent().getStringExtra("sessionId")));
+	}
+
+	//invite to challenge
+	public void inviteToChallenge(View view){
+		startActivity(new Intent(LoggedIn.this, InviteToChallenge.class));
+	}
+
+	public void goToProfile(View view){
+		startActivity(new Intent(LoggedIn.this, ProfileActivity.class));
+	}
+
+
+
 }

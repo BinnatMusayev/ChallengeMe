@@ -63,11 +63,10 @@
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="binnet94"
-                android:textColor="#000000"
                 android:paddingBottom="5dp"
+                android:text="binnet94"
                 android:textAlignment="center"
-                />
+                android:textColor="#000000" />
         </LinearLayout>
 
         <LinearLayout
@@ -126,12 +125,13 @@
             android:textColor="#000000" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/createChallengeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="30dp"
             android:layout_marginTop="9dp"
             android:layout_weight="1"
+            android:onClick="createNewChallenge"
             android:src="@drawable/ic_add_circle_outline_black_24dp" />
 
     </LinearLayout>

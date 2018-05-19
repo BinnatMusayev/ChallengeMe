@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.challenge_me.challengeme.model.ProfileChallenge;
 
@@ -18,12 +19,11 @@ public class ProfileFragment extends Fragment {
 
 	private Fragment childFragment, currentFragment;
 	private FragmentTransaction transaction;
+	private TextView usernameLabel;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-
-
 
 		//recycler example
 		//view also usedto inflate fragment
@@ -42,8 +42,15 @@ public class ProfileFragment extends Fragment {
 
 	}
 
+    @Override
+    public void onStart() {
+        super.onStart();
 
-	public  void changeViewToList(){
+        usernameLabel = (TextView) getActivity().findViewById(R.id.username);
+//        usernameLabel.setText(getActivity().getIntent().getExtras().getString("username"));
+    }
+
+    public  void changeViewToList(){
 		currentFragment = getChildFragmentManager().findFragmentById(R.id.profileContentFragment);
 		if(!profilePostsList.class.toString().equals(currentFragment.getClass().toString())) {
 			childFragment = new profilePostsList();

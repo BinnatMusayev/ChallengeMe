@@ -102,6 +102,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
+                        android:onClick="goToProfile"
                         android:paddingLeft="3dp"
                         android:text="binnet94"
                         android:textAlignment="viewStart" />
@@ -138,6 +139,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_gravity="end"
+                        android:onClick="goToProfile"
                         android:paddingRight="3dp"
                         android:text="mesud_abdullayev"
                         android:textAlignment="viewEnd" />
